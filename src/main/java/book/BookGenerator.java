@@ -6,12 +6,16 @@ import com.github.javafaker.*;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.Date date;
+import java.util.Date;
 
 
 public class BookGenerator {
     public static CreateBook() {
         Faker faker = new Faker();
+
+        java.util.Date date;
+        date = faker.date().birthday();
+        java.time.LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
         Book book=Book.builder()
                 .isbn13(faker.code().isbn13())
@@ -20,10 +24,9 @@ public class BookGenerator {
                 .format(faker.options().option()
                 .publisher(faker.book().publisher())
                 .publicationDate(localDate)
-                .pages(faker.number().numberBetween()
+                .pages(faker.number().numberBetween(12,20)
                 .available(faker.bool().bool())
                 .build();
-        LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
         return book;
     }
     //Faker faker = new Faker();
