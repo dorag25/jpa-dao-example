@@ -1,23 +1,26 @@
 package book;
 
-
+import book.model.Book;
 
 import com.github.javafaker.*;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
 import java.util.Date;
+import java.util.Locale;
 
 
 public class BookGenerator {
-    public static CreateBook() {
-        Faker faker = new Faker();
+
+        private static Faker faker = new Faker(new Locale("hu"));
+
+        public static Book createBook;{
 
         java.util.Date date;
         date = faker.date().birthday();
         java.time.LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
-        Book book=Book.builder()
+        Book book=Book.bulider()
                 .isbn13(faker.code().isbn13())
                 .author(faker.book().author())
                 .title(faker.book().title())
