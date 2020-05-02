@@ -14,20 +14,20 @@ public class BookGenerator {
 
         private static Faker faker = new Faker(new Locale("hu"));
 
-        public static Book createBook;{
+        public static Book createBook(){
 
         java.util.Date date;
         date = faker.date().birthday();
         java.time.LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 
-        Book book=Book.bulider()
+        Book book=Book.builder()
                 .isbn13(faker.code().isbn13())
                 .author(faker.book().author())
                 .title(faker.book().title())
-                .format(faker.options().option()
+                .format(faker.options().option(Book.Format.class))
                 .publisher(faker.book().publisher())
                 .publicationDate(localDate)
-                .pages(faker.number().numberBetween(12,20)
+                .pages(faker.number().numberBetween(12,20))
                 .available(faker.bool().bool())
                 .build();
         return book;

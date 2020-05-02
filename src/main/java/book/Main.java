@@ -4,9 +4,10 @@ import book.model.Book;
 import com.google.inject.Guice;
 import com.google.inject.Injector;
 import guice.PersistenceModule;
-import book.BookGenerator.createBook;
-import user.UserDao;
-import user.model.User;
+//import book.BookGenerator.;
+
+
+import static book.BookGenerator.createBook;
 
 public class Main {
 
