@@ -12,7 +12,7 @@ import java.util.Locale;
 
 public class BookGenerator {
 
-        private static Faker faker = new Faker(new Locale("hu"));
+        private static Faker faker = new Faker(new Locale("en"));
 
         public static Book createBook(){
 
